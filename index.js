@@ -231,7 +231,7 @@ function continueQuiz() {
         updateDataSet();
         if (currentDataSet > 9) {
             $('main').empty();
-            $('main').html(generateResults());
+            $('main').html(generateResult());
         } else {
             $('main').empty();
             $('main').html(generateQuiz());

@@ -20,8 +20,6 @@ button {
     background: none;
     color: white;
     border: none;
-    outline: none;
-    
     font-family: 'Source Code Pro', monospace;
     font-size: 1.4em;
 }
@@ -43,15 +41,13 @@ button:focus {
 }
 
 header {
-    text-align: center;
-    font-size: 1em;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .status-bar {
     visibility: collapse;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     font-size: 1em;
 }
 
@@ -68,15 +64,16 @@ main {
 .quiz-start {
     text-align: center;
     font-family: 'Source Code Pro', monospace;
-    font-size: 2em;
-    margin-bottom: 30px;
+    font-size: 1.6em;
+    margin-bottom: 20px;
 }
 
 .quiz-question {
     text-align: left;
     font-family: 'Source Code Pro', monospace;
-    font-size: 2em;
-    margin-bottom: 30px;
+    font-size: 1.6em;
+    margin-top: 0px;
+    margin-bottom: 20px;
 }
 
 fieldset {
@@ -86,8 +83,8 @@ fieldset {
 
 label {
     display: block;
-    margin-right: 15px;
     line-height: 32px;
+    margin: 10px 0;
 }
 
 input {
@@ -116,8 +113,8 @@ input:focus {
 .choice-result {
     text-align: center;
     font-family: 'Source Code Pro', monospace;
-    font-size: 2em;
-    margin-bottom: 30px;
+    font-size: 1.6em;
+    margin-bottom: 20px;
 }
 
 .quiz-submit {
@@ -125,14 +122,33 @@ input:focus {
     margin: 0 auto;
 }
 
+@media only screen and (min-width: 400px)  {
+    fieldset {
+        width: 340px;
+    }
+}
+
 @media only screen and (min-width: 500px) {
+    .status-bar {
+        font-size: 1.8em;
+    }
+    .quiz-start {
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+    .quiz-question {
+        font-size: 2em;
+        margin-bottom: 40px;
+    }    
     fieldset {
         width: 480px;
+    }
+    .choice-result {
+        font-size: 2 em;
+        margin-bottom: 40px;
     }
 }
 
 @media only screen and (min-width: 700px) {
-    .status-bar {
-    font-size: 1.8em;
-    }
+    
 }
