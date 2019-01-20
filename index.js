@@ -186,8 +186,8 @@ function generateChoiceElement(item, itemIndex) {
 function generateQuizForm(quizChoices) {
     // Sets generateChoiceElement elements into an HTML form to be rendered
     const items = quizChoices.map((item, index) => generateChoiceElement(item, index));  
-    return `<form id="quiz-choices js-quiz-choices">
-        <fieldset>
+    return `<form role="group" id="quiz-choices" >
+        <fieldset role="radiogroup">
             ${items.join("")}
             <button type="button" class="quiz-submit js-quiz-submit">SUBMIT</button>
         </fieldset>
