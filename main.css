@@ -21,7 +21,6 @@ button {
     color: white;
     border: none;
     outline: none;
-    transition: 0.21s all linear;
     
     font-family: 'Source Code Pro', monospace;
     font-size: 1.4em;
@@ -32,6 +31,15 @@ button:hover {
     background: white;
     box-shadow: .1em .1em 0 grey;
     cursor: pointer;
+    transition: 0.21s all linear;
+}
+
+button:focus {
+    color: black;
+    background: white;
+    box-shadow: .1em .1em 0 grey;
+    cursor: pointer;
+    transition: 0.21s all linear;
 }
 
 header {
@@ -98,6 +106,10 @@ input {
 }
 
 input:checked {
+    border: 8px solid white;
+}
+
+input:focus {
     border: 8px solid white;
 }
 

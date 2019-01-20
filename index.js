@@ -29,7 +29,7 @@ const STORE = [
     },
 //Question 3
     {
-        quizQuestion: 'Which planet is the closest our sun?',
+        quizQuestion: 'Which planet is the closest to our sun?',
         quizChoices: [
             'Venus',
             'Mercury', 
@@ -55,12 +55,12 @@ const STORE = [
     },
 //Question 5
     {
-        quizQuestion: 'How many moons in our solar system?',
+        quizQuestion: 'How many moons are in our solar system?',
         quizChoices: [
             'One, THE Moon', 
             '181', 
             '90', 
-            'NEEDS AN OPTION'
+            '326'
             ],
         quizCorrectChoice: '181',
         quizCorrect: 'Correct! That\'s a lot of moons!',
@@ -72,7 +72,7 @@ const STORE = [
         quizChoices: [
             'High and low tides of Earth\'s oceans', 
             'Moon quakes', 
-            'NEEDS AN OPTION', 
+            'Spaghettification', 
             'All of the above'
             ],
         quizCorrectChoice: 'All of the above',
@@ -165,26 +165,26 @@ function choiceIncorrect() {
     <button type="button" class="js-quiz-continue">CONTINUE</button>`;
 }
 
-// Generates the enitre current quiz data and inserts it into the DOM to be rendered
 function generateQuiz() {
     // This function renders the Question and Answer form in the webpage
     return [generateQuestionElement(), generateQuizForm(STORE[currentDataSet].quizChoices)];
 }
 
-// Generates the question element of the current question for the quiz to be rendered
+
 function generateQuestionElement() {
-    const question = STORE[currentDataSet].quizQuestion;
-    return `<h2 class="quiz-question js-quiz-question">${question}</h2>`
+    // Generates the question element of the current question for the quiz to be rendered
+    return `<h2 class="quiz-question js-quiz-question">${STORE[currentDataSet].quizQuestion}</h2>`
 }
 
-// Generates each HTML element to make up the multiple-choice answers
+
 function generateChoiceElement(item, itemIndex) {
-    // const choices = quizData.quizChoices
+    // Generates each HTML element to make up the multiple-choice answers
     return `<label for="choice-${itemIndex}"><input type="radio" id="choice-${itemIndex}" name="quiz-choice" value="${item}">${item}</label>`;
 }   
 
-// Sets generateChoiceElement elements into an HTML form to be rendered
+
 function generateQuizForm(quizChoices) {
+    // Sets generateChoiceElement elements into an HTML form to be rendered
     const items = quizChoices.map((item, index) => generateChoiceElement(item, index));  
     return `<form id="quiz-choices js-quiz-choices">
         <fieldset>
@@ -194,8 +194,9 @@ function generateQuizForm(quizChoices) {
     </form>`
 }
 
-function generateResults() {
-    return `<h2 class="choice-result">Thank you for taking my quiz! <br> You scored <span class="js-score-num">0</span>/10 <br> Feel free to try again!</h2>
+function generateResult() {
+    // Generates result of the quiz, rendering a message, score total, and restart button
+return `<h2 class="choice-result">Thank you for taking my quiz!<br><br> You scored ${quizScore}/10<br><br> Feel free to try again!</h2>
     <button type="button" class="js-quiz-restart">RESTART</button>`
 }
 
@@ -211,6 +212,7 @@ function renderQuiz() {
 }
 
 function submitAnswer() {
+    // Evaluates if the answer is correct or inccorect when submit button is clicked, updates score and renders apprioriate message
     $('main').on('click', '.js-quiz-submit', function(event) {
         event.preventDefault();
         let choiceValue = $('input[name="quiz-choice"]:checked').val();
@@ -239,7 +241,7 @@ function continueQuiz() {
 }
 
 function restartQuiz() {
-    $('.js-quiz-restart').on('click', function(event) {
+    $('main').on('click', '.js-quiz-restart', function(event) {
         currentDataSet = 0;
         quizProgress = 0;
         quizScore = 0;
