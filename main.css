@@ -1,31 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: url(http://mediad.publicbroadcasting.net/p/ipr/files/styles/x_large/public/201501/5890474955_50c292c8c1_o.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    color: white;
+    margin: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+button {
+    background: none;
+    color: white;
+    border: none;
+    outline: none;
+    transition: 0.21s all linear;
+    
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.4em;
+}
+
+button:hover {
+    color: black;
+    background: white;
+    box-shadow: .1em .1em 0 grey;
+    cursor: pointer;
+}
+
 header {
     text-align: center;
-    font-size: 32px;
-    border: 2px solid black;
+    font-size: 1em;
     margin-bottom: 30px;
 }
 
 .status-bar {
-    border: 2px solid black;
+    visibility: collapse;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1em;
+}
+
+.status-bar button {
+    font-size: 1em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quiz-start {
+    text-align: center;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 2em;
     margin-bottom: 30px;
 }
 
-button {
-    font-size: 18px;
-    display: block;
-    margin: 0 auto;
-}
-
 .quiz-question {
-    text-align: center;
-    font-size: 24px;
+    text-align: left;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 2em;
+    margin-bottom: 30px;
 }
 
 fieldset {
-    width: 80%;
-    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    width: 280px;
 }
 
 label {
     display: block;
+    margin-right: 15px;
+    line-height: 32px;
+}
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #999;
+    transition: 0.21s all linear;
+    outline: none;
+    margin-right: 5px;
+    position: relative;
+    top: 3px;
+}
+
+input:checked {
+    border: 8px solid white;
+}
+
+.choice-result {
+    text-align: center;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.quiz-submit {
+    display: block;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 500px) {
+    fieldset {
+        width: 480px;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .status-bar {
+    font-size: 1.8em;
+    }
 }
