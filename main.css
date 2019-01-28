@@ -59,6 +59,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 50px;
 }
 
 .quiz-start {
@@ -123,6 +124,10 @@ input:focus {
 }
 
 @media only screen and (min-width: 400px)  {
+    main {
+        margin-top: 100px;
+    }
+    
     fieldset {
         width: 340px;
     }
@@ -147,8 +152,4 @@ input:focus {
         font-size: 2 em;
         margin-bottom: 40px;
     }
-}
-
-@media only screen and (min-width: 700px) {
-    
 }
